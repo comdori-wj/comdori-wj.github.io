@@ -1,13 +1,276 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <title>MillisecondTimer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title data-i18n="page-title">밀리초타이머 - 밀리초 단위 타이머, 스톱워치, 시계</title>
+    <meta name="description" data-i18n="page-description"
+        content="밀리초 단위로 정밀한 타이머, 스톱워치, 시계 기능을 제공하는 iOS 앱입니다. App Store에서 다운로드하세요!">
+    <meta name="keywords" data-i18n="page-keywords" content="밀리초타이머, 타이머, 스톱워치, 시계, iOS, 밀리초, millisecond timer">
+    <meta name="author" content="COMDORI 컴돌이">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" data-i18n="page-title" content="밀리초타이머 - 밀리초 단위 타이머, 스톱워치, 시계">
+    <meta property="og:description" data-i18n="page-description" content="밀리초 단위로 정밀한 타이머, 스톱워치, 시계 기능을 제공하는 iOS 앱입니다.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Pretendard for Korean -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<h1>MillisecondTimer pages.</h1>
-<div align="center">
-    <a href="https://apps.apple.com/kr/app/%EB%B0%80%EB%A6%AC%EC%B4%88%ED%83%80%EC%9D%B4%EB%A8%B8/id6462732415?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ko-kr?size=250x83&amp;releaseDate=1693008000" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
-</div>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span data-i18n="app-name">밀리초타이머</span>
+            </a>
+
+            <div class="header-controls">
+                <!-- 언어 스위치 -->
+                <div class="switch-group">
+                    <span data-i18n="language-ko">한국어</span>
+                    <label class="switch">
+                        <input type="checkbox" id="language-toggle" aria-label="Language Toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span data-i18n="language-en">English</span>
+                </div>
+
+                <!-- 테마 버튼 -->
+                <div class="theme-buttons">
+                    <button class="theme-button" data-theme="auto" aria-label="Auto Theme">
+                        🌓 <span data-i18n="theme-auto">자동</span>
+                    </button>
+                    <button class="theme-button" data-theme="light" aria-label="Light Theme">
+                        ☀️ <span data-i18n="theme-light">라이트</span>
+                    </button>
+                    <button class="theme-button" data-theme="dark" aria-label="Dark Theme">
+                        🌙 <span data-i18n="theme-dark">다크</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- 앱 아이콘 -->
+                <div class="hero-icon-wrapper">
+                    <img src="assets/images/icon-light.png" alt="MillisecondTimer App Icon"
+                        class="hero-app-icon hero-icon-light">
+                    <img src="assets/images/icon-dark.png" alt="MillisecondTimer App Icon"
+                        class="hero-app-icon hero-icon-dark">
+                </div>
+
+                <!-- 텍스트 & CTA -->
+                <div class="hero-text-wrapper">
+                    <h1 class="hero-title" data-i18n="hero-title">밀리초타이머</h1>
+                    <p class="hero-subtitle" data-i18n="hero-subtitle">밀리초 단위 타이머, 스톱워치, 시계를 이용해 보세요!</p>
+
+                    <div class="hero-rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-text">
+                            4.3 / 5.0 · <span data-i18n="rating-count">6개의 평가</span>
+                        </span>
+                    </div>
+
+                    <!-- Apple 공식 다운로드 배지 -->
+                    <div class="download-badges">
+                        <!-- 한국어 배지 -->
+                        <a href="https://apps.apple.com/kr/app/%EB%B0%80%EB%A6%AC%EC%B4%88%ED%83%80%EC%9D%B4%EB%A8%B8/id6462732415"
+                            class="download-badge download-badge-ko" target="_blank" rel="noopener noreferrer"
+                            id="download-cta-ko">
+                            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ko-kr?releaseDate=1693008000"
+                                alt="App Store에서 다운로드하세요" class="download-badge-img" />
+                        </a>
+                        <!-- 영어 배지 -->
+                        <a href="https://apps.apple.com/us/app/%EB%B0%80%EB%A6%AC%EC%B4%88%ED%83%80%EC%9D%B4%EB%A8%B8/id6462732415?itscg=30200&itsct=apps_box_badge&mttnsubad=6462732415"
+                            class="download-badge download-badge-en" target="_blank" rel="noopener noreferrer"
+                            id="download-cta-en">
+                            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1693008000"
+                                alt="Download on the App Store" class="download-badge-img" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스크린샷 섹션 -->
+    <section class="screenshots section" id="screenshots">
+        <div class="container">
+            <h2 class="section-title" data-i18n="screenshots-title">앱 스크린샷</h2>
+
+            <div class="screenshots-gallery">
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_1.png" alt="정확한 밀리초타이머" class="screenshot-img"
+                        id="screenshot-1">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_2.png" alt="최근 타이머로 한 번에 세팅"
+                        class="screenshot-img" id="screenshot-2">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_3.png" alt="버튼으로 쉽게 타이머를 세팅"
+                        class="screenshot-img" id="screenshot-3">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_4.png" alt="타이머 시간 입력도 빠르게" class="screenshot-img"
+                        id="screenshot-4">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_5.png" alt="앱 스크린샷 5" class="screenshot-img"
+                        id="screenshot-5">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_6.png" alt="앱 스크린샷 6" class="screenshot-img"
+                        id="screenshot-6">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_7.png" alt="앱 스크린샷 7" class="screenshot-img"
+                        id="screenshot-7">
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/ko/screenshot_8.png" alt="앱 스크린샷 8" class="screenshot-img"
+                        id="screenshot-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기능 섹션 -->
+    <section class="features section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features-title">주요 기능</h2>
+
+            <div class="features-grid">
+                <!-- 밀리초 타이머 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3 class="feature-title" data-i18n="feature-timer-title">밀리초 타이머</h3>
+                    <p class="feature-description" data-i18n="feature-timer-desc">
+                        밀리초 단위까지 정밀하게 시간을 측정할 수 있는 타이머입니다.
+                        버튼을 길게 눌러 빠르게 세팅하고, 최근 타이머 기능으로 자주 사용하는 타이머를 바로 실행하세요.
+                    </p>
+                </div>
+
+                <!-- 스톱워치 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title" data-i18n="feature-stopwatch-title">밀리초 스톱워치</h3>
+                    <p class="feature-description" data-i18n="feature-stopwatch-desc">
+                        밀리초 단위로 시간을 측정할 수 있는 스톱워치입니다.
+                        운동, 공부, 실험 등 정확한 시간 측정이 필요한 모든 순간에 활용하세요.
+                    </p>
+                </div>
+
+                <!-- 시계 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3 class="feature-title" data-i18n="feature-clock-title">밀리초 시계</h3>
+                    <p class="feature-description" data-i18n="feature-clock-desc">
+                        현재 시각을 밀리초 단위로 확인할 수 있습니다.
+                        24시간제 표시를 지원하며, 정밀한 시간 동기화가 필요한 작업에 최적화되어 있습니다.
+                    </p>
+                </div>
+
+                <!-- 프로 버전 -->
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title" data-i18n="feature-pro-title">밀리초타이머 프로</h3>
+                    <p class="feature-description" data-i18n="feature-pro-desc">
+                        광고 없이 타이머와 시간에 집중하세요!
+                        최근 타이머 기능으로 이전에 사용했던 타이머를 빠르게 세팅할 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- 사용자 경험 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title" data-i18n="feature-ux-title">직관적인 디자인</h3>
+                    <p class="feature-description" data-i18n="feature-ux-desc">
+                        3D 효과가 적용된 버튼, 다크 모드 지원,
+                        더 큰 텍스트와 충분한 대비로 누구나 쉽게 사용할 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- 접근성 -->
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3 class="feature-title" data-i18n="feature-accessibility-title">뛰어난 접근성</h3>
+                    <p class="feature-description" data-i18n="feature-accessibility-desc">
+                        VoiceOver 지원, 색상 외의 요소로도 구별 가능,
+                        손쉬운 사용 기능을 완벽하게 지원하여 모든 사용자가 편리하게 이용할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 통계 섹션 -->
+    <section class="stats section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="stats-title">방문 통계</h2>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="today-visitors">0</div>
+                    <div class="stat-label" data-i18n="stats-today">오늘 방문자</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number" id="total-visitors">0</div>
+                    <div class="stat-label" data-i18n="stats-total">누적 방문자</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">
+                    © <span id="current-year">2026</span> <strong>COMDORI</strong>. <span data-i18n="footer-rights">All
+                        rights reserved.</span>
+                </p>
+                <div class="footer-links">
+                    <a href="https://comdori.tistory.com/180" class="footer-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <span data-i18n="footer-website">개발자 웹사이트</span>
+                    </a>
+                    <a href="https://comdori.tistory.com/161" class="footer-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <span data-i18n="footer-privacy">개인정보 처리방침</span>
+                    </a>
+                    <a href="mailto:comdori@comdori.com" class="footer-link">
+                        <span data-i18n="footer-contact">문의하기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
+
 </html>
