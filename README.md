@@ -1,7 +1,7 @@
 # ⏱️ 밀리초타이머 (Millisecond Timer) Web
 
 iOS 앱 [밀리초타이머](https://apps.apple.com/app/id6462732415)의 공식 랜딩 페이지 프로젝트입니다.  
-사용자에게 앱의 주요 기능을 소개하고 App Store 다운르도를 유도하며, 다국어 및 테마 설정을 지원하는 반응형 웹사이트입니다.
+사용자에게 앱의 주요 기능을 소개하고 App Store 다운로드를 유도하며, 다국어 및 테마 설정을 지원하는 반응형 웹사이트입니다.
 
 ## 🚀 배포 주소 (Demo)
 👉 **[https://comdori-wj.github.io/](https://comdori-wj.github.io/)**
